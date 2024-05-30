@@ -10,6 +10,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -475,3 +476,6 @@ async def receive_data(data: ProcessData):
     )
 
     return result_list
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8008)
