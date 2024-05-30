@@ -53,7 +53,7 @@ mdurl==0.1.2
 multidict==6.0.5
 mypy-extensions==1.0.0
 nltk==3.8.1
-numpy==1.26.4
+numpy
 openai==1.30.4
 ordered-set==4.1.0
 orjson==3.10.3
@@ -90,8 +90,8 @@ types-requests==2.32.0.20240523
 typing-inspect==0.9.0
 typing_extensions==4.12.0
 ujson==5.10.0
-unstructured==0.14.2
-unstructured-client==0.22.0
+unstructured
+unstructured-client
 urllib3==2.2.1
 uvicorn==0.30.0
 watchfiles==0.22.0
