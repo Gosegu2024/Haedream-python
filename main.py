@@ -145,7 +145,7 @@ def find_eng_and_chi(sentence):
 
 # DB 저장
 class ModelRunner:
-    server_url = "http://localhost:8088/save_eval"
+    server_url = "http://3.222.36.157:8088/save_eval"
 
     def run_model(
         self,
@@ -311,6 +311,7 @@ def root():
 # 평가
 @app.post("/evaluate")
 async def receive_data(data: ProcessData):
+    print("평가 시작!")
     outputData = data.outputData
     standard = data.standard
     inputData = data.inputData
