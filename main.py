@@ -29,6 +29,21 @@ from collections import Counter
 import re
 import tiktoken
 
+import uvicorn
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 os.environ["LANGCHAIN_TRACING_V2"] = os.getenv('LANGCHAIN_TRACING_V2')
 os.environ["LANGCHAIN_API_KEY"] = os.getenv('LANGCHAIN_API_KEY')
@@ -277,7 +292,6 @@ class ModelRunner:
                 print(response.status_code)
 
 
-app = FastAPI()
 
 
 class ProcessData(BaseModel):
